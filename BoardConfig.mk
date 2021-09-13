@@ -25,6 +25,7 @@ endif
 # the following variables could be overridden
 TARGET_PRELINK_MODULE := false
 TARGET_NO_KERNEL ?= false
+TARGET_KERNEL_CONFIG := android-x86_64_defconfig
 TARGET_NO_RECOVERY ?= true
 TARGET_EXTRA_KERNEL_MODULES := tp_smapi
 ifneq ($(filter efi_img,$(MAKECMDGOALS)),)
@@ -78,7 +79,7 @@ SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 BOARD_WPA_SUPPLICANT_DRIVER ?= NL80211
 WPA_SUPPLICANT_VERSION ?= VER_2_1_DEVEL
 
-BOARD_GPU_DRIVERS ?= i915 i965 iris nouveau r300g r600g radeonsi virgl vmwgfx
+BOARD_GPU_DRIVERS ?= crocus i915 i965 iris nouveau r300g r600g radeonsi virgl vmwgfx
 ifneq ($(strip $(BOARD_GPU_DRIVERS)),)
 TARGET_HARDWARE_3D := true
 endif
